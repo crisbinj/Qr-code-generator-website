@@ -11,7 +11,7 @@ A simple QR code generator website using Google Chart API. This web application 
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/qr-code-generator.git
+git clone https://github.com/crisbinj/Qr-code-generator-website.git
 ```
 2. Open the index.html file in your preferred web browser.
 
