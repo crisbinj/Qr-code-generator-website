@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>QR code Generator</title>
+</head>
+
+<body>
+    <script>
+        function hello() {
+            var gapi = "https://chart.googleapis.com/chart?chf=bg,s,65432100&cht=qr&chs=";
+            var myqrtext = document.getElementById("qrtext");
+            var mysize = parseInt(document.getElementById("size").value);
+
+            if (myqrtext.value !== "" && mysize >= 100 && mysize <= 300) {
+                var imgData = gapi + mysize + "x" + mysize + "&chl=" + myqrtext.value;
+                var url = "result.html?imgData=" + encodeURIComponent(imgData);
+                window.open(url, "result.html");
+            } else {
+                alert("please enter text and select a valid size");
+            }
+        }
+
+
+    </script>
+    <div id="content">
+        <div class="grid">
+            <h2 align="center">QR Code Generator</h2>
+            <center> <img src="" id="img"></center>
+
+            <select id="size">
+                <option value="100">100x100</option>
+                <option value="150">150x150</option>
+                <option value="200">200x200</option>
+                <option value="250" selected>250x250</option>
+                <option value="300">300x300</option>
+            </select>
+            <br><br>
+            <textarea placeholder="Enter your Text" id="qrtext"></textarea>
+            <br><br>
+            <input type="submit" value="Generate" onclick="hello()">
+            <br><br>
+            <p>Developed by Crisbin Joseph</p>
+
+        </div>
+    </div>
+</body>
+
+</html>
